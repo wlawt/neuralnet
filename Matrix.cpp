@@ -22,6 +22,9 @@ Matrix::Matrix(std::vector<std::vector<double>> const &array)
 // Scalar multiplication
 Matrix Matrix::multiply(double const &value)
 {
+    /* 
+        2 *  [ 10 6 ] = [2*10   2*6]
+    */
     int i, j;
 
     Matrix result(height, width);
@@ -40,6 +43,9 @@ Matrix Matrix::multiply(double const &value)
 // Matrix addition
 Matrix Matrix::add(Matrix const &m) const
 {
+    /* 
+        [2 10] + [3 15] = [2+3  10+15]
+     */
     assert(height == m.height && width == m.width);
     int i, j;
 
@@ -123,6 +129,13 @@ Matrix Matrix::dot(Matrix const &m) const
 // Matrix tranpose
 Matrix Matrix::transpose() const
 {
+    /* 
+        [                               [
+            1 2 3                           1 4 7
+            4 5 6            ->             2 5 8
+            7 8 9                           3 6 9
+        ]                               ]
+     */
     int i, j;
 
     Matrix result(height, width);
